@@ -56,7 +56,7 @@ function LatestBlog() {
           </div>
 
           <div className="card-container text-center d-flex flex-wrap">
-            {blogData?.map((item, index) => (
+            {blogData?.slice(0, 4)?.map((item, index) => (
               <div
                 className="card mx-auto my-auto mt-5 mb-5"
                 style={{ width: "300px" }}
