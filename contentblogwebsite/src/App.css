@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+/* 
+#backgroundpic {
+  background-image: image-set(
+    ContentBlog/contentblogwebsite/src/Wallpapers/redeyed-tree-frog-sitting-green-leaves
+  );
+} */
+
+.addblogbody {
+  background: linear-gradient(to right, #38ef7d, #11998e);
+}

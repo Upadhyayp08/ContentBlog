@@ -1,0 +1,24 @@
+// get all students data-
+export const GET_ALL_BLOG_REQUEST = "GET_ALL_BLOG_REQUEST";
+export const GET_ALL_BLOG_SUCCESS = "GET_ALL_BLOG_SUCCESS";
+export const GET_ALL_BLOG_ERROR = "GET_ALL_BLOG_ERROR";
+
+// get single student data-
+export const GET_SINGLE_BLOG_REQUEST = "GET_SINGLE_BLOG_REQUEST";
+export const GET_SINGLE_BLOG_SUCCESS = "GET_SINGLE_BLOG_SUCCESS";
+export const GET_SINGLE_BLOG_ERROR = "GET_SINGLE_BLOG_ERROR";
+
+// post blog data-
+export const POST_BLOG_REQUEST = "POST_BLOG_REQUEST";
+export const POST_BLOG_SUCCESS = "POST_BLOG_SUCCESS";
+export const POST_BLOG_ERROR = "POST_BLOG_ERROR";
+
+// update blog data-
+export const UPDATE_BLOG_REQUEST = "UPDATE_BLOG_REQUEST";
+export const UPDATE_BLOG_SUCCESS = "UPDATE_BLOG_SUCCESS";
+export const UPDATE_BLOG_ERROR = "UPDATE_BLOG_ERROR";
+
+// delete blog data-
+export const DELETE_BLOG_REQUEST = "DELETE_BLOG_REQUEST";
+export const DELETE_BLOG_SUCCESS = "DELETE_BLOG_SUCCESS";
+export const DELETE_BLOG_ERROR = "DELETE_BLOG_ERROR";
