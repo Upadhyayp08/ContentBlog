@@ -23,7 +23,7 @@ function WatchBlog() {
     left: 0,
     width: "100vw",
     height: "94vh",
-    // backgroundColor: "green",
+    backgroundColor: "#d8f3dc",
   };
   return (
     <>
@@ -37,7 +37,7 @@ function WatchBlog() {
                 class="card"
                 style={{
                   width: "28rem",
-                  backgroundColor: "#b7e4c7",
+                  backgroundColor: "#40916c",
                   marginTop: "60px",
                 }}
               >

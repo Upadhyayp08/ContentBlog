@@ -46,3 +46,8 @@
 .addblogbody {
   background: linear-gradient(to right, #38ef7d, #11998e);
 }
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out;
+}

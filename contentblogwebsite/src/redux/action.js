@@ -2,6 +2,18 @@ import axios from "axios";
 import * as types from "./actionType";
 
 // get all students data-
+// export const getAllBlogData = () => (dispatch) => {
+//   dispatch({ type: types.GET_ALL_BLOG_REQUEST });
+//   return axios
+//     .get("http://localhost:8080/api/v1/blogs")
+//     .then((res) => {
+//       dispatch({ type: types.GET_ALL_BLOG_SUCCESS, payload: res.data });
+//     })
+//     .catch((err) => {
+//       dispatch({ type: types.GET_ALL_BLOG_ERROR });
+//     });
+// };
+
 export const getAllBlogData = () => (dispatch) => {
   dispatch({ type: types.GET_ALL_BLOG_REQUEST });
   return axios

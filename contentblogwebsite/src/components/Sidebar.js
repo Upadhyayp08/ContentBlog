@@ -19,7 +19,11 @@ function SidebarMenu() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a
+          className="navbar-brand"
+          href="#"
+          onClick={() => handleNavigate("Home")}
+        >
           AP
         </a>
         <button
@@ -39,15 +43,6 @@ function SidebarMenu() {
               <button className="btn" onClick={() => handleNavigate("Home")}>
                 Home
               </button>
-            </li>
-            <li className="nav-item">
-              <a
-                className="nav-link active"
-                aria-current="page"
-                href="#latestblog"
-              >
-                Latest Blog
-              </a>
             </li>
             <li className="nav-item dropdown">
               {/* <a

@@ -47,11 +47,38 @@ function AddBlog() {
       setTimeout(() => {
         // Make API call here
         if (formValues._id == 0) {
-          dispatch(usedata.postBlogData(formValues));
+          dispatch(usedata.postBlogData(formValues))
+            .then(
+              () => dispatch(usedata.getAllBlogData()),
+              setFormValues({
+                _id: 0,
+                Name: "",
+                Description: "",
+                Image: "",
+                Paragraph: "",
+              })
+            )
+            .catch((error) => {
+              console.log("Error:", error);
+            });
+          // setData([...data, ...formValues]);
         } else {
-          dispatch(usedata.updateBlogData(formValues));
+          dispatch(usedata.updateBlogData(formValues))
+            .then(
+              () => dispatch(usedata.getAllBlogData()),
+              setFormValues({
+                _id: 0,
+                Name: "",
+                Description: "",
+                Image: "",
+                Paragraph: "",
+              })
+            )
+            .catch((error) => {
+              console.log("Error:", error);
+            });
         }
-      }, 7000)
+      }, 5000)
     );
   };
 
@@ -60,17 +87,20 @@ function AddBlog() {
 
   useEffect(() => {
     dispatch(usedata.getAllBlogData());
-    setData(dataresponse?.payload);
   }, []);
 
-  // Created a useEffect so that it remove unnecessary key from the response
   useEffect(() => {
-    const { __v, ...updatedData } = dataresponse.postResponse;
-    setFormValues((prevFormValues) => ({
-      ...prevFormValues,
-      ...updatedData,
-    }));
-  }, [dataresponse.postResponse]);
+    setData(dataresponse?.payload);
+  }, [dataresponse?.payload]);
+
+  // Created a useEffect so that it remove unnecessary key from the response
+  // useEffect(() => {
+  //   const { __v, ...updatedData } = dataresponse.postResponse;
+  //   setFormValues((prevFormValues) => ({
+  //     ...prevFormValues,
+  //     ...updatedData,
+  //   }));
+  // }, [dataresponse.postResponse]);
   console.log("dataresponse", dataresponse);
 
   // Clean up the typing timeout on unmount
@@ -85,7 +115,11 @@ function AddBlog() {
   const handleDelete = (_id) => {
     const filteredData = data.filter((item) => item._id != _id);
     setData(filteredData);
-    dispatch(usedata.deleteBlogData(_id));
+    dispatch(usedata.deleteBlogData(_id))
+      .then(() => dispatch(usedata.getAllBlogData()))
+      .catch((error) => {
+        console.log("Error:", error);
+      });
     setFormValues({
       _id: 0,
       Name: "",
