@@ -14,44 +14,20 @@ function LatestBlog() {
 
   const data = useSelector((store) => store.appReducer);
 
-  // useEffect(() => {
-  //   setFormValues(data.postResponse);
-  // const { __v, ...updatedData } = data;
-  // setFormValues(updatedData);
-  // }, []);
-
   useEffect(() => {
     setBlogData(data.payload);
   }, [data]);
-
-  console.log("data::>>", data);
 
   return (
     <>
       <div id="latestblog" style={{ backgroundColor: "#b7e4c7" }}>
         <div className="container">
           <div
-            className=" row"
+            className="row justify-content-center" // Added justify-content-center class
             style={{ fontFamily: "sans-serif", color: "white" }}
           >
-            <div className="col-md-8 text-end">
-              <h1 className="pt-5" style={{ marginRight: "100px" }}>
-                Latest Blogs
-              </h1>
-            </div>
-            <div className="col-md-4 mt-5 pt-2 text-end">
-              <a href="#" style={{ border: "none" }}>
-                <button
-                  className="btn btn-primary"
-                  style={{
-                    color: "black",
-                    border: "1px solid #b7e4c7",
-                    backgroundColor: "white",
-                  }}
-                >
-                  See More
-                </button>
-              </a>
+            <div className="col-md-8 text-center">
+              <h1 className="pt-5">Latest Blogs</h1>
             </div>
           </div>
 
@@ -69,9 +45,9 @@ function LatestBlog() {
                   <a
                     href="#"
                     className="btn"
+                    onClick={() => navigate(`/watchblog/${item._id}`)}
                     style={{
                       color: "black",
-                      // border: "1px solid black",
                       backgroundColor: "#b7e4c7",
                     }}
                   >
