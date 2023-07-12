@@ -7,4 +7,6 @@ const dbConnection = mongoose.connect(process.env.mongoUrl, {
   useUnifiedTopology: true,
 });
 
+console.log(process.env.mongoUrl);
+
 module.exports = dbConnection;

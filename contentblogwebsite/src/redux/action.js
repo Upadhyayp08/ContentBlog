@@ -17,7 +17,7 @@ import * as types from "./actionType";
 export const getAllBlogData = () => (dispatch) => {
   dispatch({ type: types.GET_ALL_BLOG_REQUEST });
   return axios
-    .get("http://localhost:8080/api/v1/blogs")
+    .get("https://fine-belt-colt.cyclic.app/api/v1/blogs")
     .then((res) => {
       dispatch({ type: types.GET_ALL_BLOG_SUCCESS, payload: res.data });
     })
@@ -30,7 +30,7 @@ export const getAllBlogData = () => (dispatch) => {
 export const getSingleBlogData = (_id) => (dispatch) => {
   dispatch({ type: types.GET_SINGLE_BLOG_REQUEST });
   return axios
-    .get(`http://localhost:8080/api/v1/blogs/${_id}`)
+    .get(`https://fine-belt-colt.cyclic.app/api/v1/blogs/${_id}`)
     .then((res) => {
       console.log("res", res);
       dispatch({
@@ -47,7 +47,7 @@ export const getSingleBlogData = (_id) => (dispatch) => {
 export const postBlogData = (payload) => (dispatch) => {
   dispatch({ type: types.POST_BLOG_REQUEST });
   return axios
-    .post("http://localhost:8080/api/v1/blogs/insert", payload)
+    .post("https://fine-belt-colt.cyclic.app/api/v1/blogs/insert", payload)
     .then((res) => {
       alert("Success");
       dispatch({ type: types.POST_BLOG_SUCCESS, postResponse: res.data });
@@ -66,7 +66,10 @@ export const postBlogData = (payload) => (dispatch) => {
 export const updateBlogData = (payload) => (dispatch) => {
   dispatch({ type: types.UPDATE_BLOG_REQUEST });
   return axios
-    .put(`http://localhost:8080/api/v1/blogs/${payload._id}`, payload)
+    .put(
+      `https://fine-belt-colt.cyclic.app/api/v1/blogs/${payload._id}`,
+      payload
+    )
     .then((res) => {
       alert("Success");
       dispatch({
@@ -87,9 +90,9 @@ export const updateBlogData = (payload) => (dispatch) => {
 export const deleteBlogData = (_id) => (dispatch) => {
   dispatch({ type: types.DELETE_BLOG_REQUEST });
   return axios
-    .delete(`http://localhost:8080/api/v1/blogs/${_id}`)
+    .delete(`https://fine-belt-colt.cyclic.app/api/v1/blogs/${_id}`)
     .then((res) => {
-      alert("Success");
+      // alert("Success");
       dispatch({
         type: types.DELETE_BLOG_SUCCESS,
         deleteResponse: res.data,
