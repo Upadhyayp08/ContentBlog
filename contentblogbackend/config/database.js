@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-// database connection-
-const dbConnection = mongoose.connect(process.env.mongoUrl);
+// Database connection
+const dbConnection = mongoose.connect(process.env.mongoUrl, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 module.exports = dbConnection;
