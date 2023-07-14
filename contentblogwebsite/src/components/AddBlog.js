@@ -18,15 +18,13 @@ function AddBlog() {
   const [data, setData] = useState([]);
   const [typingTimeout, setTypingTimeout] = useState(null);
   const divStyle = {
-    // position: "absolute",
     top: 0,
     left: 0,
     width: "100vw",
     height: "100vh",
-    // backgroundColor: `linear-gradient(to right, #38ef7d, #11998e)`, // Replace with your desired background color or styles
   };
 
-  // handleChange for the autosave API to be called
+  // handleChange for the autosave API to be called and formValues to be filled
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormValues((prevFormValues) => {
@@ -38,12 +36,12 @@ function AddBlog() {
       };
     });
 
-    // Clear previous typing timeout
+    // Clear previous typing timeout when typing
     if (typingTimeout) {
       clearTimeout(typingTimeout);
     }
 
-    // Start a new typing timeout
+    // Start a new typing timeout if not typing then if we start typing again the timer gets reset
     setTypingTimeout(
       setTimeout(() => {
         // Make API call here
@@ -62,7 +60,6 @@ function AddBlog() {
             .catch((error) => {
               console.log("Error:", error);
             });
-          // setData([...data, ...formValues]);
         } else {
           dispatch(usedata.updateBlogData(formValues))
             .then(
@@ -86,49 +83,37 @@ function AddBlog() {
   // From redux Store we have to get the data we can get the data by using dataresponse
   const dataresponse = useSelector((store) => store.appReducer);
 
+  // useEffect to get the data on page refresh
   useEffect(() => {
     dispatch(usedata.getAllBlogData());
   }, []);
-
+  // Whenever there is some changes in the dataresponse.payload it gets set in the setData
   useEffect(() => {
     setData(dataresponse?.payload);
   }, [dataresponse?.payload]);
 
-  console.log("dataresponse", dataresponse);
   const [deleteID, setDeleteID] = useState(0);
-  const handleDelete = (_id) => {
-    setDeleteID(_id);
-    const filteredData = data.filter((item) => item._id != _id);
-    setData(filteredData);
-    dispatch(usedata.deleteBlogData(_id))
-      .then(() => dispatch(usedata.getAllBlogData()))
-      .catch((error) => {
-        console.log("Error:", error);
-      });
-    setFormValues({
-      _id: 0,
-      Name: "",
-      Description: "",
-      Image: "",
-      Paragraph: "",
-    });
-  };
 
+  // Created a handle so that we can edit the desired value
   const handleEdit = (item) => {
     setFormValues(item);
   };
-
-  console.log("formValues::>", formValues);
 
   return (
     <>
       <SidebarMenu />
       <div className="addblogbody" style={divStyle}>
         <div className="container text-center">
+          <div
+            className="text-center pt-3"
+            style={{ fontFamily: "sans-serif", color: "white" }}
+          >
+            <h2>Add Blogs</h2>
+          </div>
           <div className="row">
             <div className="col-md-3"></div>
             <div
-              className="col-md-6 mt-5 mb-5 px-5 py-5"
+              className="col-md-6 mt-3 mb-5 px-5 py-5"
               style={{
                 border: "1px solid black",
                 backgroundColor: "white",
@@ -219,7 +204,6 @@ function AddBlog() {
                       <td>{item.Description}</td>
                       <td>
                         <img
-                          // className="form-cont"
                           style={{ height: "60px", width: "60px" }}
                           src={item.Image}
                         />

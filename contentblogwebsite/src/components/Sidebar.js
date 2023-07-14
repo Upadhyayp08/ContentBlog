@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import APLogo from "../Logo/NavbarLogo.svg";
 
 function SidebarMenu() {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const navigate = useNavigate();
+  // Used to collpase the navbar on mobile screen
   const handleToggle = () => {
     setIsCollapsed(!isCollapsed);
   };
 
+  // To Navigate to some Page
   const handleNavigate = (params) => {
     if (params === "Home") {
       navigate("/");
@@ -24,7 +27,8 @@ function SidebarMenu() {
           href="#"
           onClick={() => handleNavigate("Home")}
         >
-          AP
+          Animal Planet
+          {/* <img src={APLogo} alt="Logo" /> */}
         </a>
         <button
           className="navbar-toggler"

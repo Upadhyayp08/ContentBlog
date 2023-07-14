@@ -3,11 +3,13 @@ import { Blogdata } from "../BlogData";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as usedata from "../redux/action";
+import Carousel from "react-bootstrap/Carousel";
 
 function LatestBlog() {
   const [blogData, setBlogData] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   useEffect(() => {
     dispatch(usedata.getAllBlogData());
   }, []);
@@ -23,40 +25,49 @@ function LatestBlog() {
       <div id="latestblog" style={{ backgroundColor: "#b7e4c7" }}>
         <div className="container">
           <div
-            className="row justify-content-center" // Added justify-content-center class
+            className="row justify-content-center"
             style={{ fontFamily: "sans-serif", color: "white" }}
           >
             <div className="col-md-8 text-center">
-              <h1 className="pt-5">Latest Blogs</h1>
+              <h1 className="pt-4">Blogs</h1>
             </div>
           </div>
 
-          <div className="card-container text-center d-flex flex-wrap">
-            {/* {blogData?.slice(0, 4)?.map((item, index) => ( */}
-            {blogData?.slice(-4)?.map((item, index) => (
-              <div
-                className="card mx-auto my-auto mt-5 mb-5"
-                style={{ width: "300px" }}
-                key={index}
-              >
-                <img src={item.Image} className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">{item.Name}</h5>
-                  <p className="card-text">{item.Description}</p>
-                  <a
-                    href="#"
-                    className="btn"
-                    onClick={() => navigate(`/watchblog/${item._id}`)}
-                    style={{
-                      color: "black",
-                      backgroundColor: "#b7e4c7",
-                    }}
-                  >
-                    See More
-                  </a>
-                </div>
-              </div>
-            ))}
+          <div className="row justify-content-center">
+            <div className="col-md-8">
+              <Carousel>
+                {blogData?.map((item, index) => (
+                  <Carousel.Item key={index}>
+                    <div
+                      className="card mx-auto my-auto mt-4 mb-5"
+                      style={{ width: "180px", height: "300px" }}
+                    >
+                      <img
+                        src={item.Image}
+                        className="card-img-top"
+                        alt="..."
+                        style={{ height: "130px", backgroundSize: "cover" }}
+                      />
+                      <div className="card-body text-center">
+                        <h5 className="card-title">{item.Name}</h5>
+                        <p className="card-text">{item.Description}</p>
+                        <a
+                          href="#"
+                          className="btn"
+                          onClick={() => navigate(`/watchblog/${item._id}`)}
+                          style={{
+                            color: "black",
+                            backgroundColor: "#b7e4c7",
+                          }}
+                        >
+                          See More
+                        </a>
+                      </div>
+                    </div>
+                  </Carousel.Item>
+                ))}
+              </Carousel>
+            </div>
           </div>
         </div>
       </div>

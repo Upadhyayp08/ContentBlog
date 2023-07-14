@@ -29,24 +29,21 @@ function WatchBlog() {
     <>
       <SidebarMenu />
       <div style={divStyle}>
-        <div className="container pt-5">
+        <div className="container text-center pt-5">
           <div className="row">
             <div className="col-md-4"></div>
             <div className="col-md-6">
               <div
                 class="card"
                 style={{
-                  width: "28rem",
+                  width: "24rem",
+                  height: "500px",
                   backgroundColor: "#40916c",
                   marginTop: "60px",
                 }}
               >
                 <img src={blogData.Image} class="card-img-top" alt="..." />
                 <div class="card-body">
-                  {/* <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p> */}
                   <div className="row">
                     <div className="col-md-auto">
                       <div>
@@ -55,16 +52,12 @@ function WatchBlog() {
                           {blogData.Name}
                         </label>
                       </div>
-                      {/* <div>
-                        <label>Description:{blogData.Description}</label>
-                      </div> */}
                     </div>
                     <div className="col-md-auto">
                       <label>
                         <b>Description:</b>
                         {blogData.Description}
                       </label>
-                      {/* <div>{blogData.Paragraph}</div> */}
                     </div>
                   </div>
                   <div className="mt-4">
