@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// Creating modal of the database Schema
 const itemSchema = new mongoose.Schema({
   Name: String,
   Description: String,

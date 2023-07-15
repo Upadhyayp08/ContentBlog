@@ -1,19 +1,7 @@
 import axios from "axios";
 import * as types from "./actionType";
 
-// get all students data-
-// export const getAllBlogData = () => (dispatch) => {
-//   dispatch({ type: types.GET_ALL_BLOG_REQUEST });
-//   return axios
-//     .get("http://localhost:8080/api/v1/blogs")
-//     .then((res) => {
-//       dispatch({ type: types.GET_ALL_BLOG_SUCCESS, payload: res.data });
-//     })
-//     .catch((err) => {
-//       dispatch({ type: types.GET_ALL_BLOG_ERROR });
-//     });
-// };
-
+//get all blog data
 export const getAllBlogData = () => (dispatch) => {
   dispatch({ type: types.GET_ALL_BLOG_REQUEST });
   return axios
@@ -26,7 +14,7 @@ export const getAllBlogData = () => (dispatch) => {
     });
 };
 
-// get single student data-
+// get single blog data-
 export const getSingleBlogData = (_id) => (dispatch) => {
   dispatch({ type: types.GET_SINGLE_BLOG_REQUEST });
   return axios
@@ -43,7 +31,7 @@ export const getSingleBlogData = (_id) => (dispatch) => {
     });
 };
 
-// add student data-
+// add blog data-
 export const postBlogData = (payload) => (dispatch) => {
   dispatch({ type: types.POST_BLOG_REQUEST });
   return axios
@@ -62,7 +50,7 @@ export const postBlogData = (payload) => (dispatch) => {
     });
 };
 
-// update student data-
+// update blog data-
 export const updateBlogData = (payload) => (dispatch) => {
   dispatch({ type: types.UPDATE_BLOG_REQUEST });
   return axios
@@ -86,7 +74,7 @@ export const updateBlogData = (payload) => (dispatch) => {
     });
 };
 
-// delete student data-
+// delete blog data-
 export const deleteBlogData = (_id) => (dispatch) => {
   dispatch({ type: types.DELETE_BLOG_REQUEST });
   return axios

@@ -1,9 +1,9 @@
-// get all students data-
+// get all blog data-
 export const GET_ALL_BLOG_REQUEST = "GET_ALL_BLOG_REQUEST";
 export const GET_ALL_BLOG_SUCCESS = "GET_ALL_BLOG_SUCCESS";
 export const GET_ALL_BLOG_ERROR = "GET_ALL_BLOG_ERROR";
 
-// get single student data-
+// get single blog data-
 export const GET_SINGLE_BLOG_REQUEST = "GET_SINGLE_BLOG_REQUEST";
 export const GET_SINGLE_BLOG_SUCCESS = "GET_SINGLE_BLOG_SUCCESS";
 export const GET_SINGLE_BLOG_ERROR = "GET_SINGLE_BLOG_ERROR";

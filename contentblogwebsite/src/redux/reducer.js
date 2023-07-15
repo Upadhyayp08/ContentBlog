@@ -23,7 +23,7 @@ export const reducer = (state = initState, action) => {
   } = action;
 
   switch (type) {
-    // get all students data-
+    // get all blog data-
     case types.GET_ALL_BLOG_REQUEST:
       return { ...state, isLoading: true };
 
@@ -33,7 +33,7 @@ export const reducer = (state = initState, action) => {
     case types.GET_ALL_BLOG_ERROR:
       return { ...state, isLoading: false, isError: true, payload };
 
-    // get single student data-
+    // get single blog data-
     case types.GET_SINGLE_BLOG_REQUEST:
       return { ...state, isLoading: true };
 
@@ -43,7 +43,7 @@ export const reducer = (state = initState, action) => {
     case types.GET_SINGLE_BLOG_ERROR:
       return { ...state, isLoading: false, isError: true, singleData };
 
-    // post student data-
+    // post blog data-
     case types.POST_BLOG_REQUEST:
       return { ...state, isLoading: true };
 
@@ -53,7 +53,7 @@ export const reducer = (state = initState, action) => {
     case types.POST_BLOG_ERROR:
       return { ...state, isLoading: false, isError: true, postResponse };
 
-    // update student data-
+    // update blog data-
     case types.UPDATE_BLOG_REQUEST:
       return { ...state, isLoading: true };
 
@@ -63,7 +63,7 @@ export const reducer = (state = initState, action) => {
     case types.UPDATE_BLOG_ERROR:
       return { ...state, isLoading: false, isError: true, updateResponse };
 
-    // delete student data-
+    // delete blog data-
     case types.DELETE_BLOG_REQUEST:
       return { ...state, isLoading: true };
 

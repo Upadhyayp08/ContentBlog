@@ -5,21 +5,27 @@ import dogImg from "../Logo/dogImg2.png";
 function AboutUs() {
   return (
     <>
-      <div className="row" style={{ border: "1px solid #52b788" }}>
-        <div className="col-md-4">
+      <div className="row">
+        <div className="col-lg-4 col-md-6 text-center">
           <img
             src={snakeImg}
-            className="my-5 mx-5"
-            style={{ width: "250px", height: "375px", borderRadius: "25px" }}
-          ></img>
+            className="my-5"
+            style={{
+              width: "100%",
+              maxWidth: "250px",
+              height: "auto",
+              borderRadius: "25px",
+            }}
+            alt="Snake"
+          />
         </div>
-        <div className="col-md-4">
+        <div className="col-lg-4 col-md-6">
           <div className="text-center mt-5">
             <h1 style={{ fontFamily: "sans-serif", color: "#52b788" }}>
-              AboutUs
+              About Us
             </h1>
           </div>
-          <div className="text-justify">
+          <div className="text-center mt-4">
             <p style={{ fontFamily: "sans-serif", color: "#52b788" }}>
               Welcome to our Animal Planet blog, where the wonders of the animal
               kingdom come to life! Here, our passion for discovery fuels our
@@ -36,12 +42,13 @@ function AboutUs() {
             </p>
           </div>
         </div>
-        <div className="col-md-4 text-end">
+        <div className="col-lg-4 col-md-12 text-center">
           <img
             src={dogImg}
-            className="my-5 mx-5"
-            style={{ width: "250px", borderRadius: "25px" }}
-          ></img>
+            className="my-5"
+            style={{ width: "100%", maxWidth: "250px", borderRadius: "25px" }}
+            alt="Dog"
+          />
         </div>
       </div>
     </>
