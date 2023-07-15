@@ -3,6 +3,7 @@ import SidebarMenu from "./Sidebar";
 import bgimage from "../Wallpapers/SideImg.png";
 import LatestBlog from "./LatestBlog";
 import AboutUs from "./AboutUs";
+import Footer from "./Footer";
 function Home() {
   return (
     <>
@@ -55,6 +56,7 @@ function Home() {
       </div>
       <AboutUs />
       <LatestBlog />
+      <Footer />
     </>
   );
 }
