@@ -16,7 +16,7 @@ function AboutUs() {
         <div className="col-md-4">
           <div className="text-center mt-5">
             <h1 style={{ fontFamily: "sans-serif", color: "#52b788" }}>
-              AboutUS
+              AboutUs
             </h1>
           </div>
           <div className="text-justify">
