@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import SidebarMenu from "./Sidebar";
 import bgimage from "../Wallpapers/SideImg.png";
 import LatestBlog from "./LatestBlog";
+import AboutUs from "./AboutUs";
 function Home() {
   return (
     <>
@@ -15,13 +16,16 @@ function Home() {
             backgroundSize: "cover",
           }}
         ></div>
-        <div className="col-md-6 d-flex align-items-center">
+        <div
+          className="col-md-6 d-flex align-items-center"
+          style={{ backgroundColor: "#52b788" }}
+        >
           <div className="container text-center">
             <div>
               <h1
                 style={{
                   fontFamily: "sans-serif",
-                  color: "#52b788",
+                  color: "white",
                   marginTop: "1rem",
                 }}
               >
@@ -32,7 +36,7 @@ function Home() {
               <h5
                 style={{
                   fontFamily: "sans-serif",
-                  color: "#52b788",
+                  color: "white",
                 }}
               >
                 Discovering Animals
@@ -49,6 +53,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <AboutUs />
       <LatestBlog />
     </>
   );
