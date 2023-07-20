@@ -5,7 +5,7 @@ import * as types from "./actionType";
 export const getAllBlogData = () => (dispatch) => {
   dispatch({ type: types.GET_ALL_BLOG_REQUEST });
   return axios
-    .get("https://fine-belt-colt.cyclic.app/api/v1/blogs")
+    .get("https://content-blog-xx5j.vercel.app/api/v1/blogs")
     .then((res) => {
       dispatch({ type: types.GET_ALL_BLOG_SUCCESS, payload: res.data });
     })
@@ -18,7 +18,7 @@ export const getAllBlogData = () => (dispatch) => {
 export const getSingleBlogData = (_id) => (dispatch) => {
   dispatch({ type: types.GET_SINGLE_BLOG_REQUEST });
   return axios
-    .get(`https://fine-belt-colt.cyclic.app/api/v1/blogs/${_id}`)
+    .get(`https://content-blog-xx5j.vercel.app/api/v1/blogs/${_id}`)
     .then((res) => {
       console.log("res", res);
       dispatch({
@@ -35,7 +35,7 @@ export const getSingleBlogData = (_id) => (dispatch) => {
 export const postBlogData = (payload) => (dispatch) => {
   dispatch({ type: types.POST_BLOG_REQUEST });
   return axios
-    .post("https://fine-belt-colt.cyclic.app/api/v1/blogs/insert", payload)
+    .post("https://content-blog-xx5j.vercel.app/api/v1/blogs/insert", payload)
     .then((res) => {
       alert("Success");
       dispatch({ type: types.POST_BLOG_SUCCESS, postResponse: res.data });
@@ -55,7 +55,7 @@ export const updateBlogData = (payload) => (dispatch) => {
   dispatch({ type: types.UPDATE_BLOG_REQUEST });
   return axios
     .put(
-      `https://fine-belt-colt.cyclic.app/api/v1/blogs/${payload._id}`,
+      `https://content-blog-xx5j.vercel.app/api/v1/blogs/${payload._id}`,
       payload
     )
     .then((res) => {
@@ -78,7 +78,7 @@ export const updateBlogData = (payload) => (dispatch) => {
 export const deleteBlogData = (_id) => (dispatch) => {
   dispatch({ type: types.DELETE_BLOG_REQUEST });
   return axios
-    .delete(`https://fine-belt-colt.cyclic.app/api/v1/blogs/${_id}`)
+    .delete(`https://content-blog-xx5j.vercel.app/api/v1/blogs/${_id}`)
     .then((res) => {
       // alert("Success");
       dispatch({
